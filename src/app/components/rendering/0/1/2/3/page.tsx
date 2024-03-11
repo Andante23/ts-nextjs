@@ -10,8 +10,10 @@ const CSR = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await fetch(`https://randomuser.me/api`);
-      const { results } = await response.json();
+      const response = await fetch(`https://catfact.ninja/fact`);
+
+      const results = await response.json();
+
       setCatFact(results);
     };
 
@@ -21,6 +23,8 @@ const CSR = () => {
   if (!catFact) {
     return <div>로딩중...</div>;
   }
+
+  console.log(catFact);
 
   return (
     <div>
